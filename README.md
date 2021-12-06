@@ -9,9 +9,41 @@ Deepin Desktop Environment on openEuler
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.下载openEuler ISO镜像并安装系统：
+
+```
+https://openeuler.org/zh/download/
+```
+
+2.更新软件源：
+
+```
+sudo dnf update
+```
+
+3.安装DDE：
+
+```
+sudo dnf install dde
+```
+
+4.设置以图形界面的方式启动：
+
+```
+sudo systemctl set-default graphical.target
+```
+
+5.重启：
+
+```
+sudo reboot
+```
+
+6.在重启完成后，使用安装过程中创建的用户或openeuler用户登陆桌面
+
+```
+dde桌面无法使用root账号登陆 dde内置了openeuler用户，此用户的密码为openeuler
+```
 
 #### 使用说明
 
