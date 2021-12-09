@@ -8,9 +8,41 @@ Software architecture description
 
 #### Installation
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. Download Openeuler ISO image and install the system
+
+   ```
+   https://openeuler.org/zh/download/
+   ```
+
+2. Update software source
+
+   ```
+   sudo dnf update
+   ```
+
+3. Install DDE
+
+   ```
+   sudo dnf install dde
+   ```
+
+4. The settings are started as a graphical interface
+
+   ```
+   sudo systemctl set-default graphical.target
+   ```
+
+5. restart
+
+   ```
+   sudo reboot
+   ```
+
+6. After the restart is completed, login to the desktop using the user created during the installation or openeuler user
+
+   ```
+   DDE desktop cannot login with root account. DDE has built-in openeuler user whose password is openeuler
+   ```
 
 #### Instructions
 
