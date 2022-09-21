@@ -1,14 +1,17 @@
-import Ui_pam_dialog
+import Ui_pam
 import sys
 from PyQt5.QtWidgets import QApplication, QDialog
+import qdarkstyle
+from qdarkstyle.light.palette import LightPalette
 
 class Mainpam(QDialog):
 
     def __init__(self, parent=None):
         super(QDialog, self).__init__(parent)
-        self.ui = Ui_pam_dialog.Ui_Dialog()
+        self.ui = Ui_pam_widget.Ui_Form()
         self.ui.setupUi(self)
 
+#口令策略
     def passwd_conf(self):
         print("configue passwd")
         minlen = self.ui.minlen.value()
@@ -70,7 +73,7 @@ minlen={} minclass={} lcredit={} ucredit={} dcredit={} ocredit={} retry={}\
                     break
 
         
-        
+#用户登录策略        
     def usrlogin_conf(self):
         print("usrlogin---")
 
@@ -179,7 +182,7 @@ deny={}  unlock_time={}\n'.format(user_deny,user_unlocktime)
                     f.write(rest)
                     break
 
-
+#ssh登录策略
     def sshlogin_conf(self):#如果有这三行的话，就修改；没有的话就在pam_unix上下添加
         print("sshlogin---")
         ssh_deny = self.ui.ssh_deny.value()
@@ -238,19 +241,75 @@ deny={}  unlock_time={}\n'.format(ssh_deny,ssh_unlocktime)
                     f.write(content3.encode())                                      
                     f.write(rest)
                     break
+
+
+#ssh:root_deny限制root通过ssh登陆
+        ssh_root_deny = self.ui.scheckBox_rootssh.isChecked()
+        with open('/etc/pam.d/sshd', mode='rb+') as f:
+            while True:#首先删去已有配置行
+                line = f.readline()  # 逐行读取
+                line_str = line.decode().splitlines()
+                if line_str == []:
+                    break
+                elif line_str == ['']:
+                    continue
+                line_list = line_str[0].split()
+                try:
+                    if ((line_list[0] == 'auth' and  line_list[1] == 'required'  and line_list[2] == 'pam_listfile.so')
+                        or (line_list[0] == '#' and  line_list[1] == 'auth'  and line_list[2] == 'required' and line_list[3] == 'pam_listfile.so' )
+                        or (line_list[0] == '#auth' and  line_list[1] == 'required'  and line_list[2] == 'pam_listfile.so' )):                   
+
+                        rest = f.read()  
+                        f.seek(-len(rest), 1)
+                        f.seek(-len(line), 1) 
+                        f.truncate() 
+                        f.write(rest)
+                        #f.seek(-len(rest), 1)
+                except IndexError:
+                    continue
+
+            if ssh_root_deny:
+                f.seek(0)
+                rest = f.read() 
+                f.seek(0)
+                f.truncate() 
+                content = 'auth       required pam_listfile.so item=user sense=deny file=/etc/pam.d/ssh-denyuser onerr=succeed\n'
+                f.write(content.encode())                                     
+                f.write(rest)
                 
-                    
+                with open('/etc/pam.d/ssh-denyuser', mode='ab+') as ssh_denyuser_f:
+                    flag = 0
+                    ssh_denyuser_f.seek(0)
+                    while True :
+                        line = ssh_denyuser_f.readline()  # 逐行读取
+                        line_str = line.decode().splitlines()
+                        if line_str == []:
+                            break
+                        elif line_str == ['']:
+                            continue
+                        line_list = line_str[0].split()
+                        try:
+                            if (line_list[0] == 'root'):
+                                flag = 1
+                                break
+                        except IndexError:
+                            continue
+                    if flag == 0 :
+                        rest = ssh_denyuser_f.read()
+                        ssh_denyuser_f.seek(-len(rest), 1)
+                        ssh_denyuser_f.truncate()
+                        ssh_denyuser_f.write("root".encode())
+                        ssh_denyuser_f.write(rest)
 
-
-                
-                    
-
-        
 
 
 
 if  __name__ == '__main__' :
     myapp = QApplication(sys.argv)
     mywindow = Mainpam()
+
+    myapp.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyqt5',palette=LightPalette()))
+    #apply_stylesheet(myapp, theme='light_amber.xml')
+
     mywindow.show()
     sys.exit(myapp.exec_())
