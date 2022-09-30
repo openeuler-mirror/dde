@@ -1,0 +1,171 @@
+/* ================================================ *
+author:lei
+lastedited:2020.2
+* ================================================ */
+/*hover*/
+/*actived*/
+/*gradient start*/
+/*gradient end*/
+
+QWidget
+{
+    color: #222;
+    background-color: #FDFDFD;
+}
+QWidget#Form
+{
+    color: #222;
+    background-color: #EEEEEF;
+}
+
+/* =============================================== */
+/* Label                                           */
+/* =============================================== */
+QLabel {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 1px;
+}
+
+
+/* A QLabel is a QFrame ... */
+/* A QToolTip is a QLabel ... */
+QToolTip {
+    border: 1px solid #999999;
+    padding: 5px;
+    border-radius: 3px;
+    opacity:210;
+}
+
+/* =============================================== */
+/* Button                                          */
+/* =============================================== */
+QPushButton {
+	background-color:#EEEEEF;
+    border-radius: 8px;
+    border: none;
+    /*background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, 
+        stop: 0 #EEEEEF, stop: 0.05 #DADADF,stop: 0.5 #DADADF, 
+        stop: 0.9 #EEEEEF, stop: 1 #EEEEEF);*/
+}
+
+QPushButton:hover{
+    background-color: #DADADF;
+
+}
+
+QPushButton:pressed
+{  
+    background-color: #999999;
+
+}
+
+QPushButton#minwindow
+{
+    border-radius: 8px;
+    text-align:center;
+    background-color: #FDFDFD;
+    border: none;
+}
+QPushButton#minwindow:hover{background: #EEEEEF;}
+QPushButton#close
+{
+    border-radius: 8px;
+    background-color: #FDFDFD;
+    border: none;
+    font-size: 14px;
+}
+QPushButton#close:hover{background: #EEEEEF;}
+
+/* =============================================== */
+/* TabWidget                                       */
+/* =============================================== */
+QTabWidget{
+    margin-top:10px;
+    background: #999999;
+
+}
+QTabWidget::pane{
+    border: none;
+    background: #999999;
+}
+QTabWidget::tab-bar {
+    left: 0px;
+}
+QTabBar::tab {
+    background: #EEEEEF;
+	border-radius: 8px;
+    padding: 3px 5px;    
+}
+QTabBar::tab:hover {
+    background: #EEEEEF;
+}
+QTabBar::tab:selected {
+    background: #3A89FF;
+	color:#FDFDFD
+}
+
+QTabBar::tab:focus {
+    background: #3A89FF;
+	color:#FDFDFD
+}
+QTabBar::tab:top{
+    margin-top: 3px;
+    border-bottom: transparent;
+    margin-right: 1px;
+}
+QTabBar::tab:bottom{
+    margin-bottom: 3px;
+    border-top: transparent;
+    margin-right: 1px;
+}
+QTabBar::tab:left{
+    border-right: transparent;
+    margin-bottom: 1px;
+}
+QTabBar::tab:right{
+    border-left: transparent;
+    margin-bottom: 1px;
+}
+
+/* =============================================== */
+/* QTableWidget                                    */
+/* =============================================== */
+QTableWidget, QTableView
+{
+    gridline-color: #999999;    /*表格中的网格线条颜色*/
+    background: #FDFDFD;
+    /*设置交替颜色，需要在函数属性中设置:tableWidget->setAlternatingRowColors(true)*/
+    alternate-background-color: #EEEEEF;
+    /*selection-color:#FDFDFD;    鼠标选中时前景色：文字颜色*/
+    selection-background-color:#8BF;   /*鼠标选中时背景色*/
+    border:1px solid #999999;  /*边框线的宽度、颜色*/
+    /*border:none;    去除边界线*/
+    /*border-radius:5px;*/
+    /*padding:10px 10px;*/  /*表格与边框的间距*/
+}
+QTableView::item, QTabWidget::item{
+    background: transparent;
+	outline-style: none;
+	border: none;
+}
+
+QTableView::item:hover {
+	background: #8BF;
+    border: 1px solid #3A89FF;
+}
+
+QTableView::item:selected {
+	background: #8BF;
+	color: #EEEEEF;
+}
+
+QTableView::item:selected:active {
+	background: #59F;
+	color: #EEEEEF;
+}
+
+QTableWidget QComboBox{
+    margin: 2px;
+    border: none;
+}
