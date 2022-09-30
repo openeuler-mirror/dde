@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=pw-policy tools
+Exec=pw_policy
+Icon=pw-policy
+Name=pw-policy
+Type=Application
+X-Deepin-Vendor=user-custom

@@ -1,17 +1,37 @@
-import Ui_pam
+#from re import A
+import pw.Ui_pam_widget
 import sys
-from PyQt5.QtWidgets import QApplication, QDialog
-import qdarkstyle
-from qdarkstyle.light.palette import LightPalette
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+import os
+
+basedir = os.path.dirname(__file__)
 
 class Mainpam(QDialog):
 
     def __init__(self, parent=None):
         super(QDialog, self).__init__(parent)
-        self.ui = Ui_pam_widget.Ui_Form()
+        self.ui = pw.Ui_pam_widget.Ui_Form()
         self.ui.setupUi(self)
+        #self.ui.setWindowFlags(Qt.FramelessWindowHint)  # 去边框
 
-#口令策略
+    def mouseMoveEvent(self, e: QMouseEvent):  # 重写移动事件
+        self._endPos = e.pos() - self._startPos
+        self.move(self.pos() + self._endPos)
+
+    def mousePressEvent(self, e: QMouseEvent):
+        if e.button() == Qt.LeftButton:
+            self._isTracking = True
+            self._startPos = QPoint(e.x(), e.y())
+
+    def mouseReleaseEvent(self, e: QMouseEvent):
+        if e.button() == Qt.LeftButton:
+            self._isTracking = False
+            self._startPos = None
+            self._endPos = None
+
+
     def passwd_conf(self):
         print("configue passwd")
         minlen = self.ui.minlen.value()
@@ -73,7 +93,7 @@ minlen={} minclass={} lcredit={} ucredit={} dcredit={} ocredit={} retry={}\
                     break
 
         
-#用户登录策略        
+        
     def usrlogin_conf(self):
         print("usrlogin---")
 
@@ -182,7 +202,7 @@ deny={}  unlock_time={}\n'.format(user_deny,user_unlocktime)
                     f.write(rest)
                     break
 
-#ssh登录策略
+
     def sshlogin_conf(self):#如果有这三行的话，就修改；没有的话就在pam_unix上下添加
         print("sshlogin---")
         ssh_deny = self.ui.ssh_deny.value()
@@ -301,15 +321,35 @@ deny={}  unlock_time={}\n'.format(ssh_deny,ssh_unlocktime)
                         ssh_denyuser_f.write("root".encode())
                         ssh_denyuser_f.write(rest)
 
+class QSSLoader:
+    def __init__(self):
+        pass
 
+    @staticmethod
+    def read_qss_file(qss_file_name):
+        with open(qss_file_name, 'r',  encoding='UTF-8') as file:
+            return file.read()
 
+def run():
+    myapp = QApplication(sys.argv)
+    myapp.setWindowIcon(QIcon(os.path.join(basedir, 'pw-policy.png')))
+    mywindow = Mainpam()
+
+    style_file = os.path.join(basedir, 'pw-policy.qss')
+    style_sheet = QSSLoader.read_qss_file(style_file)
+    myapp.setStyleSheet(style_sheet)
+
+    mywindow.show()
+    sys.exit(myapp.exec_())
 
 if  __name__ == '__main__' :
     myapp = QApplication(sys.argv)
+    myapp.setWindowIcon(QIcon(os.path.join(basedir, 'pw-policy.png')))
     mywindow = Mainpam()
 
-    myapp.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyqt5',palette=LightPalette()))
-    #apply_stylesheet(myapp, theme='light_amber.xml')
+    style_file = os.path.join(basedir, 'pw-policy.qss')
+    style_sheet = QSSLoader.read_qss_file(style_file)
+    myapp.setStyleSheet(style_sheet)
 
     mywindow.show()
     sys.exit(myapp.exec_())
