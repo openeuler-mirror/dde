@@ -13,6 +13,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 	"strings"
@@ -46,13 +47,17 @@ func getLog() (logs []*object.Commit, err error) {
 		return
 	}
 
-	cc, err := r.Log(&git.LogOptions{From: ref.Hash(), Order: git.LogOrderDefault})
+	cc, err := r.Log(&git.LogOptions{From: ref.Hash(), Order: git.LogOrderCommitterTime, All: true})
 	if err != nil {
 		return
 	}
 
 	for i := 0; i < changelogNum; i++ {
-		commit, _ := cc.Next()
+		commit, e := cc.Next()
+		if e != nil {
+			err = fmt.Errorf("out of commit num, which is %d", i)
+			return
+		}
 		if len(commit.ParentHashes) != 1 {
 			i--
 			continue
