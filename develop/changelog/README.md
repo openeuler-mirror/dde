@@ -23,8 +23,8 @@
 编译环境，Go>=1.18
 
 ```shell
-git clone https://gitee.com/li_zengyi/changelog.git
-cd changelog
+git clone https://gitee.com/openeuler/dde.git
+cd dde/develop/changelog
 go build
 ```
 
@@ -34,19 +34,19 @@ Usage of changelog:
   -c int
         num of changelog need to create (default 1)
   -e    useDefaultEditor, Windows: notepad; Linux: vi
-  -f string
-        output file
   -g string
         choose the git path (default ".")
+  -o string
+        output file
   -s    use short entry
   -v string
-        changelog version
+        set changelog version
 
 ```
 
 ## 编辑器
-使用的编辑器的优先级如下  
-1. 命令行参数 `-g`
+使用的编辑器的优先级如下
+1. 命令行参数 `-e`
 2. 环境变量 `GIT_EDITOR`
 3. Git设置：`core.editor`
 4. 环境变量 `VISUAL`
@@ -58,6 +58,6 @@ Usage of changelog:
 [MulanPSL-2.0](http://license.coscl.org.cn/MulanPSL2/)
 
 
-## 参考  
+## 参考
 
 [Git编辑器](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-var.html)
