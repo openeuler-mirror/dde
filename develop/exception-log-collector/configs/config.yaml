@@ -1,0 +1,21 @@
+path:
+  - /var/log/messages
+alert:
+  - name: dingding
+    type: webhook
+    configs:
+      url: "http://dingding.com/webhook"
+  - name: wecom
+    type: webhook
+    configs:
+      url: "http://wecom.com/webhook"
+  - name: email
+    type: email
+    configs:
+      smtp_server: smtp.example.com
+      smtp_port: "587"
+      from: alert@example.com
+      to: admin@example.com
+      username: "your_smtp_username"
+      password: "your_smtp_password"
+ai_service_url: "http://localhost:5000/analyze"
