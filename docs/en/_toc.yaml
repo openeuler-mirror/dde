@@ -1,0 +1,8 @@
+label: DDE User Guide
+isManual: true
+description: Install and use DDE.
+sections:
+  - label: DDE Installation
+    href: ./dde_installation.md
+  - label: DDE User Guide
+    href: ./dde_user_guide.md

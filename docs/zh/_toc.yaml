@@ -1,0 +1,9 @@
+label: DDE用户指南
+isManual: true
+description: 安装并使用 DDE 桌面环境
+sections:
+  - label: 安装 DDE
+    href: ./dde_installation.md
+  - label: 使用 DDE
+    href: ./dde_user_guide.md
+
