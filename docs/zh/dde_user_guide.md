@@ -80,8 +80,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 ![1|wallpaper](./figures/63.jpg)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 > ![tips](./figures/icon125-o.svg)窍门： *您还可以在图片查看器中设置您喜欢的图片为桌面壁纸。*
 
 ### 剪贴板
@@ -289,8 +287,6 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 控制中心首页主要展示各个设置模块，方便日常查看和快速设置。
 
 ![2|dcchomepage](./figures/42.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 打开控制中心的某一设置模块后，可以通过左侧导航栏快速切换到另一设置模块。
 
@@ -663,8 +659,6 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 对系统电源进行一些设置，让系统更安全。
 
 ![0|power](./figures/57.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 #### 设置显示器关闭时间
 

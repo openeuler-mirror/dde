@@ -32,8 +32,9 @@ DDE是统信软件团队研发的一款功能强大的桌面环境。包含数�
    ```
 
 6. 在重启完成后，使用安装过程中创建的用户或openeuler用户登录桌面
-
-   > dde桌面无法使用root帐号登录
-   > dde内置了openeuler用户，此用户的密码为openeuler
+   > [!NOTE]说明
+   > 
+   > dde桌面无法使用root帐号登录。
+   > dde内置了openeuler用户，此用户的密码为openeuler。
 
 现在您可以尽情的使用dde桌面了。
