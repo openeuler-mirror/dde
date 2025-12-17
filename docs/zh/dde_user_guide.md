@@ -80,8 +80,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 ![1|wallpaper](./figures/63.jpg)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 > ![tips](./figures/icon125-o.svg)窍门： *您还可以在图片查看器中设置您喜欢的图片为桌面壁纸。*
 
 ### 剪贴板
@@ -113,8 +111,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 | ![onboard](./figures/icon103-o.svg)         | 屏幕键盘 - 点击使用虚拟键盘。               | ![shutdown](./figures/icon122-o.svg)             | 电源 - 点击进入关机界面。             |
 | ![trash](./figures/icon126-o.svg)           | 回收站。                                    |                                                  |                                       |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 > ![tips](./figures/icon125-o.svg)窍门：*在高效模式下，单击任务栏最右侧可显示桌面。将鼠标指针移到任务栏上已打开窗口的图标时，会显示相应的预览窗口。*
 
 ### 切换显示模式
@@ -124,8 +120,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 ![1|fashion](./figures/46.png)
 
 ![1|efficient](./figures/63.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 您可以通过以下操作来切换显示模式：
 
@@ -154,8 +148,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 
 ![message](./figures/51.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
 您还可以单击任务栏上的 ![notification](./figures/icon101-o.svg)， 打开通知中心，查看所有通知。
 
 ### 查看日期时间
@@ -175,8 +167,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 | 切换用户![userswitch_normal](./figures/icon128-o.svg)      | 选择另一个用户帐户登录。                                |
 | 注销![logout_normal](./figures/icon92-o.svg)               | 清除当前登录用户的信息。                                |
 | 启动系统监视器![deepin-system-monitor](./figures/icon68-o.svg) | 快速启动系统监视器。                                    |
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 > ![notes](./figures/icon99-o.svg)说明：*当系统存在多个帐户时才显示 ![userswitch_normal](./figures/icon128-o.svg)。*
 
@@ -222,8 +212,6 @@ DDE桌面环境是一款美观易用、安全可靠的图形化操作界面。�
 - 单击启动器界面左上角分类图标![category](./figures/icon56-o.svg)进行排列。
 
 ![1|sortapp](./figures/60.jpg)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 在小窗口模式下，默认按照使用频率排列应用。
 
@@ -289,8 +277,6 @@ DDE桌面操作系统通过控制中心来管理系统的基本设置，包括�
 控制中心首页主要展示各个设置模块，方便日常查看和快速设置。
 
 ![2|dcchomepage](./figures/42.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 打开控制中心的某一设置模块后，可以通过左侧导航栏快速切换到另一设置模块。
 
@@ -663,8 +649,6 @@ VPN即虚拟专用网络，其主要功能是在公用网络上建立专用网�
 对系统电源进行一些设置，让系统更安全。
 
 ![0|power](./figures/57.png)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 #### 设置显示器关闭时间
 
